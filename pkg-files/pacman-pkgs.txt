@@ -34,6 +34,7 @@ dialog
 dmidecode
 dnsmasq
 dtc
+easyeffects
 efibootmgr
 egl-wayland
 exfat-utils
