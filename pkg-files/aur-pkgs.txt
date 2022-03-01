@@ -4,11 +4,9 @@ kvantum-theme-nordic-git
 lightly-git
 lightlyshaders-git
 nerd-fonts-fira-code
-nordic-darker-theme
-nordic-kde-git
-nordic-theme
 ocs-url
 plymouth-git
 sddm-nordic-theme-git
-snapper-gui-git
+timeshift
+timeshift-autosnap
 ttf-meslo

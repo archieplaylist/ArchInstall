@@ -45,6 +45,7 @@ fuseiso
 gcc
 gparted
 gptfdisk
+grub-btrfs
 grub-customizer
 gst-libav
 gst-plugins-good
@@ -78,8 +79,6 @@ python-notify2
 python-psutil
 python-pyqt5
 python-pip
-snap-pac
-snapper
 terminus-font
 traceroute
 ttf-droid
