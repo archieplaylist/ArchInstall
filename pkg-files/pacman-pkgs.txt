@@ -54,7 +54,6 @@ htop
 libdvdcss
 libtool
 lsof
-lutris
 lzop
 m4
 make
