@@ -22,6 +22,7 @@ source $HOME/ArchInstall/configs/setup.conf
   git clone "https://github.com/ChrisTitusTech/zsh"
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
   ln -s "~/zsh/.zshrc" ~/.zshrc
+  chsh -s /usr/bin/zsh $USERNAME
 
 sed -n '/'$INSTALL_TYPE'/q;p' ~/ArchInstall/pkg-files/${DESKTOP_ENV}.txt | while read line
 do
@@ -60,9 +61,9 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
   if [[ $DESKTOP_ENV == "kde" ]]; then
     cp -r ~/ArchInstall/configs/.config/* ~/.config/
     pip install konsave
-    konsave -i ~/ArchInstall/configs/kde.knsv
+    konsave -i ~/ArchInstall/configs/laptop.knsv
     sleep 1
-    konsave -a kde
+    konsave -a laptop
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
     git clone https://github.com/stojshic/dotfiles-openbox
