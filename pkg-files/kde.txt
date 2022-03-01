@@ -27,7 +27,6 @@ kwayland-integration
 layer-shell-qt
 milou
 okular
-oxygen
 plasma-nm
 plasma-pa
 plasma-wayland-session
