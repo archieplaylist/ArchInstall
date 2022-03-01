@@ -1,6 +1,6 @@
 # ArchTitus Installer Script
 
-<img src="https://i.imgur.com/YiNMnan.png" />
+<!-- <img src="https://i.imgur.com/YiNMnan.png" /> -->
 
 This README contains the steps I do to install and configure a fully-functional Arch Linux installation containing a desktop environment, all the support packages (network, bluetooth, audio, printers, etc.), along with all my preferred applications and utilities. The shell scripts in this repo allow the entire process to be automated.)
 
@@ -17,9 +17,9 @@ From initial Prompt type the following commands:
 
 ```
 pacman -Sy git
-git clone https://github.com/ChrisTitusTech/ArchTitus
-cd ArchTitus
-./archtitus.sh
+git clone https://github.com/mariotani25/ArchInstall
+cd ArchInstall
+./archinstall.sh
 ```
 
 ### System Description
@@ -49,4 +49,4 @@ After unblocking the WiFi, you can connect to it. Go through these 5 steps:
 ## Credits
 
 - Original packages script was a post install cleanup script called ArchMatic located here: https://github.com/rickellis/ArchMatic
-- Thank you to all the folks that helped during the creation from YouTube Chat! Here are all those Livestreams showing the creation: <https://www.youtube.com/watch?v=IkMCtkDIhe8&list=PLc7fktTRMBowNaBTsDHlL6X3P3ViX3tYg>
+- Original packages script was a post install cleanup script called ArchTitus located here: https://github.com/ChrisTitusTech/ArchTitus
