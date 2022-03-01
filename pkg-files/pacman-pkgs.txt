@@ -78,6 +78,8 @@ python-notify2
 python-psutil
 python-pyqt5
 python-pip
+snap-pac
+snapper
 terminus-font
 traceroute
 ttf-droid
