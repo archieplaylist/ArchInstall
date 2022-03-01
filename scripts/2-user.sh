@@ -22,7 +22,7 @@ source $HOME/ArchInstall/configs/setup.conf
   git clone "https://github.com/ChrisTitusTech/zsh"
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
   ln -s "~/zsh/.zshrc" ~/.zshrc
-  chsh -s /usr/bin/zsh $USERNAME
+  # chsh -s /usr/bin/zsh $USERNAME
 
 sed -n '/'$INSTALL_TYPE'/q;p' ~/ArchInstall/pkg-files/${DESKTOP_ENV}.txt | while read line
 do
