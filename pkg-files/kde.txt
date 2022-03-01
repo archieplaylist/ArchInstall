@@ -24,6 +24,7 @@ kscreen
 kvantum-qt5
 kwalletmanager
 kwayland-integration
+latte-dock
 layer-shell-qt
 milou
 okular
