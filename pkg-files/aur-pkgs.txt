@@ -1,5 +1,6 @@
 --END OF MINIMAL INSTALL--
 autojump
+kvantum-theme-nordic-git
 lightly-git
 lightlyshaders-git
 nerd-fonts-fira-code
