@@ -28,6 +28,7 @@ latte-dock
 layer-shell-qt
 milou
 okular
+packagekit-qt5
 plasma-nm
 plasma-pa
 plasma-wayland-session
