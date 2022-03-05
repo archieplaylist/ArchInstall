@@ -53,10 +53,10 @@ export PATH=$PATH:~/.local/bin
 if [[ $INSTALL_TYPE == "FULL" ]]; then
   if [[ $DESKTOP_ENV == "kde" ]]; then
     cp -r ~/ArchInstall/configs/.config/* ~/.config/
-    pip install konsave
-    python -m konsave -i ~/ArchInstall/configs/kde.knsv
+    # pip install konsave
+    konsave -i ~/ArchInstall/configs/kde.knsv
     sleep 1
-    python -m konsave -a kade
+    konsave -a kade
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
     git clone https://github.com/stojshic/dotfiles-openbox
