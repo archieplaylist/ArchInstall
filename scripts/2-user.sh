@@ -25,7 +25,7 @@ do
     continue
   fi
   echo "INSTALLING: ${line}"
-  sudo pacman -S --noconfirm --needed ${line}
+  sudo pacman -S --noconfirm --needed --color=always ${line}
 done
 
 
@@ -43,7 +43,7 @@ if [[ ! $AUR_HELPER == none ]]; then
       continue
     fi
     echo "INSTALLING: ${line}"
-    $AUR_HELPER -S --noconfirm --needed ${line}
+    $AUR_HELPER -S --noconfirm --needed --color=always ${line}
   done
 fi
 
