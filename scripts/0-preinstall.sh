@@ -11,11 +11,11 @@ Setting up mirrors for optimal download
 source $CONFIGS_DIR/setup.conf
 iso=$(curl -4 ifconfig.co/country-iso)
 timedatectl set-ntp true
-pacman -S --noconfirm archlinux-keyring #update keyrings to latest to prevent packages failing to install
-pacman -S --noconfirm --needed pacman-contrib terminus-font
+pacman -S --noconfirm --color=always archlinux-keyring #update keyrings to latest to prevent packages failing to install
+pacman -S --noconfirm --needed --color=always pacman-contrib terminus-font
 setfont ter-v22b
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
-pacman -S --noconfirm --needed reflector rsync grub
+pacman -S --noconfirm --needed --color=always reflector rsync grub
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 echo -ne "
 -------------------------------------------------------------------------
@@ -29,7 +29,7 @@ echo -ne "
                     Installing Prerequisites
 -------------------------------------------------------------------------
 "
-pacman -S --noconfirm --needed gptfdisk btrfs-progs glibc
+pacman -S --noconfirm --needed --color=always gptfdisk btrfs-progs glibc
 echo -ne "
 -------------------------------------------------------------------------
                     Formating Disk
@@ -107,7 +107,7 @@ elif [[ "${FS}" == "luks" ]]; then
 # open luks container and ROOT will be place holder 
     echo -n "${LUKS_PASSWORD}" | cryptsetup open ${partition3} ROOT -
 # now format that container
-    mkfs.btrfs -L ROOT ${partition3}
+    mkfs.btrfs -L ROOT ${partition3} -f
 # create subvolumes for btrfs
     mount -t btrfs ${partition3} /mnt
     subvolumesetup
@@ -131,7 +131,7 @@ echo -ne "
                     Arch Install on Main Drive
 -------------------------------------------------------------------------
 "
-pacstrap /mnt base base-devel linux linux-firmware vim nano sudo archlinux-keyring wget libnewt --noconfirm --needed
+pacstrap /mnt base base-devel linux linux-firmware vim nano sudo archlinux-keyring wget libnewt --noconfirm --needed --color=always
 echo "keyserver hkp://keyserver.ubuntu.com" >> /mnt/etc/pacman.d/gnupg/gpg.conf
 cp -R ${SCRIPT_DIR} /mnt/root/ArchInstall
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
@@ -149,7 +149,7 @@ echo -ne "
 if [[ ! -d "/sys/firmware/efi" ]]; then
     grub-install --boot-directory=/mnt/boot ${DISK}
 else
-    pacstrap /mnt efibootmgr --noconfirm --needed
+    pacstrap /mnt efibootmgr --noconfirm --needed --color=always
 fi
 echo -ne "
 -------------------------------------------------------------------------

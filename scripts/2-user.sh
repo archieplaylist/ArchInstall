@@ -10,11 +10,11 @@ Installing AUR Softwares
 source $HOME/ArchInstall/configs/setup.conf
 
   cd ~
-  mkdir "/home/$USERNAME/.cache"
-  touch "/home/$USERNAME/.cache/zshhistory"
+  mkdir "$HOME/.cache"
+  touch "$HOME/.cache/zshhistory"
   git clone "https://github.com/ChrisTitusTech/zsh"
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-  ln -s "~/zsh/.zshrc" ~/.zshrc
+  ln -s "$HOME/zsh/.zshrc" ~/.zshrc
   # chsh -s /usr/bin/zsh $USERNAME
 
 sed -n '/'$INSTALL_TYPE'/q;p' ~/ArchInstall/pkg-files/${DESKTOP_ENV}.txt | while read line
@@ -25,7 +25,7 @@ do
     continue
   fi
   echo "INSTALLING: ${line}"
-  sudo pacman -S --noconfirm --needed ${line}
+  sudo pacman -S --noconfirm --needed --color=always ${line}
 done
 
 
@@ -43,7 +43,7 @@ if [[ ! $AUR_HELPER == none ]]; then
       continue
     fi
     echo "INSTALLING: ${line}"
-    $AUR_HELPER -S --noconfirm --needed ${line}
+    $AUR_HELPER -S --noconfirm --needed --color=always ${line}
   done
 fi
 
@@ -56,7 +56,9 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     pip install konsave
     python -m konsave -i ~/ArchInstall/configs/kde.knsv
     sleep 1
-    python -m konsave -a kade
+    python -m konsave -a kde
+    sleep 1
+    cp -r ~/ArchInstall/configs/.local/share ~/.local/share/
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
     git clone https://github.com/stojshic/dotfiles-openbox
