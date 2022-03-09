@@ -56,8 +56,8 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
                                                        sddm-nordic-theme-git
     tar -xvf $HOME/ArchInstall/configs/local-kde.tar.gz -C $HOME/ArchInstall/configs/
     sleep 1
-    cp -rf $HOME/ArchInstall/configs/.local/share/* $HOME/.local/share/
-    cp -rf ~/ArchInstall/configs/.config/* ~/.config/
+    cp -rf $HOME/ArchInstall/configs/.local/share/* $HOME/.local/share
+    cp -rf ~/ArchInstall/configs/.config/* ~/.config
     pip install konsave
     python -m konsave -i ~/ArchInstall/configs/kde.knsv
     sleep 1

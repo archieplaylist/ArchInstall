@@ -130,7 +130,6 @@ cp -rf  ${TIMESHIFT_CONF}/timeshift-autosnap.conf /etc/
 
 fi
 
-
 echo -ne "
 -------------------------------------------------------------------------
                Enabling (and Theming) Plymouth Boot Splash
