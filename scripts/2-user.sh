@@ -60,6 +60,8 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     sleep 1
     python -m konsave -a kde
     sleep 1
+    tar -xf ~/ArchInstall/configs/.local-kde.tar.gz
+    sleep 1
     cp -r ~/ArchInstall/configs/.local/share ~/.local/share/
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
