@@ -117,6 +117,20 @@ echo "  Periodic Trim enabled"
 
 # fi
 
+if [[ "${FS}" == "luks" || "${FS}" == "btrfs" ]]; then
+echo -ne "
+-------------------------------------------------------------------------
+                    Creating Timeshift Config
+-------------------------------------------------------------------------
+"
+
+TIMESHIFT_CONF="$HOME/ArchInstall/configs/etc"
+cp -rfv ${TIMESHIFT_CONF}/timeshift /etc/
+cp -rf  ${TIMESHIFT_CONF}/timeshift-autosnap.conf /etc/
+
+fi
+
+
 echo -ne "
 -------------------------------------------------------------------------
                Enabling (and Theming) Plymouth Boot Splash
