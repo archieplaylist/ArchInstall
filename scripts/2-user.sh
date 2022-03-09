@@ -54,10 +54,10 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
   if [[ $DESKTOP_ENV == "kde" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always kvantum-theme-nordic-git \
                                                        sddm-nordic-theme-git
-    tar -xf $HOME/ArchInstall/configs/local-kde.tar.gz
+    tar -xvf $HOME/ArchInstall/configs/local-kde.tar.gz -C $HOME/ArchInstall/configs/
     sleep 1
-    cp -r $HOME/ArchInstall/configs/.local/share/* $HOME/.local/share/
-    cp -r ~/ArchInstall/configs/.config/* ~/.config/
+    cp -rf $HOME/ArchInstall/configs/.local/share/* $HOME/.local/share/
+    cp -rf ~/ArchInstall/configs/.config/* ~/.config/
     pip install konsave
     python -m konsave -i ~/ArchInstall/configs/kde.knsv
     sleep 1
