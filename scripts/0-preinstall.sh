@@ -22,7 +22,8 @@ echo -ne "
                     Setting up $iso mirrors for faster downloads
 -------------------------------------------------------------------------
 "
-reflector -a 48 -c $iso -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
+# reflector -a 48 -c $iso -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
+reflector -f 20 -l 30 --number 10 --save /etc/pacman.d/mirrorlist
 mkdir /mnt &>/dev/null # Hiding error message if any
 echo -ne "
 -------------------------------------------------------------------------
@@ -55,12 +56,35 @@ echo -ne "
                     Creating Filesystems
 -------------------------------------------------------------------------
 "
+createswapfile() {
+    $SWAPFILE || return 0
+    if [[ "${FS}" == "ext4" ]]; then
+        local path=/opt/swap
+        mkdir -p /mnt$path # Put swap into the actual system, not into RAM disk, otherwise there is no point in it, it'll cache RAM into RAM. So, /mnt/ everything.
+        chattr +C /mnt$path #apply NOCOW, btrfs needs that.
+    else
+        local path=/swap
+        truncate -s 0 /mnt$path/swapfile
+        chattr +C /mnt$path/swapfile #apply NOCOW, btrfs needs that.
+        btrfs property set /mnt$path/swapfile compression none
+    fi  
+    dd if=/dev/zero of=/mnt$path/swapfile bs=1M count=4096 status=progress
+    chmod 600 /mnt$path/swapfile # set permissions.
+    chown root /mnt$path/swapfile
+    mkswap /mnt$path/swapfile
+    swapon /mnt$path/swapfile
+    # The line below is written to /mnt/ but doesn't contain /mnt/, since it's just / for the system itself.
+    echo "$path/swapfile	none	swap	sw	0	0" >> /mnt/etc/fstab # Add swap to fstab, so it KEEPS working after installation.
+    echo "vm.swappiness=10" >> /mnt/etc/sysctl.conf # Lower swappiness
+}
+
 createsubvolumes () {
     btrfs subvolume create /mnt/@
     btrfs subvolume create /mnt/@home
     btrfs subvolume create /mnt/@var
     btrfs subvolume create /mnt/@tmp
     btrfs subvolume create /mnt/@.snapshots
+    $SWAPFILE && btrfs subvolume create /mnt/@swap
 }
 
 mountallsubvol () {
@@ -68,6 +92,7 @@ mountallsubvol () {
     mount -o ${MOUNT_OPTIONS},subvol=@tmp ${partition3} /mnt/tmp
     mount -o ${MOUNT_OPTIONS},subvol=@var ${partition3} /mnt/var
     mount -o ${MOUNT_OPTIONS},subvol=@.snapshots ${partition3} /mnt/.snapshots
+    $SWAPFILE && mount -o ${MOUNT_OPTIONS},subvol=@swap,x-mount.mkdir ${partition3} /mnt/swap
 }
 
 subvolumesetup () {
@@ -96,10 +121,12 @@ if [[ "${FS}" == "btrfs" ]]; then
     mkfs.btrfs -L ROOT ${partition3} -f
     mount -t btrfs ${partition3} /mnt
     subvolumesetup
+    createswapfile
 elif [[ "${FS}" == "ext4" ]]; then
     mkfs.vfat -F32 -n "EFIBOOT" ${partition2}
     mkfs.ext4 -L ROOT ${partition3}
     mount -t ext4 ${partition3} /mnt
+    createswapfile
 elif [[ "${FS}" == "luks" ]]; then
     mkfs.vfat -F32 -n "EFIBOOT" ${partition2}
 # enter luks password to cryptsetup and format root partition
@@ -111,6 +138,7 @@ elif [[ "${FS}" == "luks" ]]; then
 # create subvolumes for btrfs
     mount -t btrfs ${partition3} /mnt
     subvolumesetup
+    createswapfile
 # store uuid of encrypted partition for grub
     echo ENCRYPTED_PARTITION_UUID=$(blkid -s UUID -o value ${partition3}) >> $CONFIGS_DIR/setup.conf
 fi
@@ -151,24 +179,24 @@ if [[ ! -d "/sys/firmware/efi" ]]; then
 else
     pacstrap /mnt efibootmgr --noconfirm --needed --color=always
 fi
-echo -ne "
--------------------------------------------------------------------------
-                    Checking for low memory systems <8G
--------------------------------------------------------------------------
-"
-TOTAL_MEM=$(cat /proc/meminfo | grep -i 'memtotal' | grep -o '[[:digit:]]*')
-if [[  $TOTAL_MEM -lt 8000000 ]]; then
-    # Put swap into the actual system, not into RAM disk, otherwise there is no point in it, it'll cache RAM into RAM. So, /mnt/ everything.
-    mkdir -p /mnt/opt/swap # make a dir that we can apply NOCOW to to make it btrfs-friendly.
-    chattr +C /mnt/opt/swap # apply NOCOW, btrfs needs that.
-    dd if=/dev/zero of=/mnt/opt/swap/swapfile bs=1M count=2048 status=progress
-    chmod 600 /mnt/opt/swap/swapfile # set permissions.
-    chown root /mnt/opt/swap/swapfile
-    mkswap /mnt/opt/swap/swapfile
-    swapon /mnt/opt/swap/swapfile
-    # The line below is written to /mnt/ but doesn't contain /mnt/, since it's just / for the system itself.
-    echo "/opt/swap/swapfile	none	swap	sw	0	0" >> /mnt/etc/fstab # Add swap to fstab, so it KEEPS working after installation.
-fi
+# echo -ne "
+# -------------------------------------------------------------------------
+#                     Checking for low memory systems <8G
+# -------------------------------------------------------------------------
+# "
+# TOTAL_MEM=$(cat /proc/meminfo | grep -i 'memtotal' | grep -o '[[:digit:]]*')
+# if [[  $TOTAL_MEM -lt 8000000 ]]; then
+#     # Put swap into the actual system, not into RAM disk, otherwise there is no point in it, it'll cache RAM into RAM. So, /mnt/ everything.
+#     mkdir -p /mnt/opt/swap # make a dir that we can apply NOCOW to to make it btrfs-friendly.
+#     chattr +C /mnt/opt/swap # apply NOCOW, btrfs needs that.
+#     dd if=/dev/zero of=/mnt/opt/swap/swapfile bs=1M count=2048 status=progress
+#     chmod 600 /mnt/opt/swap/swapfile # set permissions.
+#     chown root /mnt/opt/swap/swapfile
+#     mkswap /mnt/opt/swap/swapfile
+#     swapon /mnt/opt/swap/swapfile
+#     # The line below is written to /mnt/ but doesn't contain /mnt/, since it's just / for the system itself.
+#     echo "/opt/swap/swapfile	none	swap	sw	0	0" >> /mnt/etc/fstab # Add swap to fstab, so it KEEPS working after installation.
+# fi
 echo -ne "
 -------------------------------------------------------------------------
                     SYSTEM READY FOR 1-setup.sh
