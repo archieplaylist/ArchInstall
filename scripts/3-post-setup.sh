@@ -126,7 +126,7 @@ echo -ne "
 
 TIMESHIFT_CONF="$HOME/ArchInstall/configs/etc"
 cp -rfv ${TIMESHIFT_CONF}/timeshift /etc/
-cp -rf  ${TIMESHIFT_CONF}/timeshift-autosnap.conf /etc/
+cp -rvf  ${TIMESHIFT_CONF}/timeshift-autosnap.conf /etc/
 
 fi
 
