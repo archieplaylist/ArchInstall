@@ -51,16 +51,18 @@ export PATH=$PATH:~/.local/bin
 
 # Theming DE if user chose FULL installation
 if [[ $INSTALL_TYPE == "FULL" ]]; then
+cp -rf ~/ArchInstall/configs/.config/* ~/.config
   if [[ $DESKTOP_ENV == "kde" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always kvantum-theme-nordic-git \
                                                        sddm-nordic-theme-git
-    tar -xvf $HOME/ArchInstall/configs/local-kde.tar.gz -C $HOME/ArchInstall/configs/
+    tar -xvf $HOME/ArchInstall/configs/kde-config/local-kde.tar.gz -C $HOME/ArchInstall/configs/kde-config/
     sleep 1
     mkdir -p ~/.local/share
-    cp -rf ~/ArchInstall/configs/.local/share/* ~/.local/share
-    cp -rf ~/ArchInstall/configs/.config/* ~/.config
+    cp -rf ~/ArchInstall/configs/kde-config/.local/share/* ~/.local/share
+    # cp -rf ~/ArchInstall/configs/.config/* ~/.config
+    ### Konsave
     pip install konsave
-    python -m konsave -i ~/ArchInstall/configs/kde.knsv
+    python -m konsave -i ~/ArchInstall/configs/kde-config/kde.knsv
     sleep 1
     python -m konsave -a kde
     sleep 1
