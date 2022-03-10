@@ -100,20 +100,33 @@ echo "  Bluetooth enabled"
 systemctl enable fstrim.timer
 echo "  Periodic Trim enabled"
 
+if [[ "${FS}" == "luks" || "${FS}" == "btrfs" ]]; then
+echo -ne "
+-------------------------------------------------------------------------
+                    Creating Snapper Config
+-------------------------------------------------------------------------
+"
+
+SNAPPER_CONF="$HOME/ArchInstall/configs/etc/snapper/configs/root"
+mkdir -p /etc/snapper/configs/
+cp -rfv ${SNAPPER_CONF} /etc/snapper/configs/
+
+SNAPPER_CONF_D="$HOME/ArchInstall/configs/etc/conf.d/snapper"
+mkdir -p /etc/conf.d/
+cp -rfv ${SNAPPER_CONF_D} /etc/conf.d/
+
+fi
+
 # if [[ "${FS}" == "luks" || "${FS}" == "btrfs" ]]; then
 # echo -ne "
 # -------------------------------------------------------------------------
-#                     Creating Snapper Config
+#                     Creating Timeshift Config
 # -------------------------------------------------------------------------
 # "
 
-# SNAPPER_CONF="$HOME/ArchInstall/configs/etc/snapper/configs/root"
-# mkdir -p /etc/snapper/configs/
-# cp -rfv ${SNAPPER_CONF} /etc/snapper/configs/
-
-# SNAPPER_CONF_D="$HOME/ArchInstall/configs/etc/conf.d/snapper"
-# mkdir -p /etc/conf.d/
-# cp -rfv ${SNAPPER_CONF_D} /etc/conf.d/
+# TIMESHIFT_CONF="$HOME/ArchInstall/configs/etc"
+# # cp -rfv ${TIMESHIFT_CONF}/timeshift /etc/
+# cp -rvf  ${TIMESHIFT_CONF}/timeshift-autosnap.conf /etc/
 
 # fi
 
