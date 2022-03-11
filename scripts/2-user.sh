@@ -51,14 +51,14 @@ export PATH=$PATH:~/.local/bin
 
 # Theming DE if user chose FULL installation
 if [[ $INSTALL_TYPE == "FULL" ]]; then
-cp -rf ~/ArchInstall/configs/.config/* ~/.config
+# cp -rf ~/ArchInstall/configs/.config/* ~/.config
   if [[ $DESKTOP_ENV == "kde" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always sddm-nordic-theme-git
     tar -xvf $HOME/ArchInstall/configs/kde-config/local-kde.tar.gz -C $HOME/ArchInstall/configs/kde-config/
     sleep 1
     mkdir -p ~/.local/share
     cp -rf ~/ArchInstall/configs/kde-config/.local/share/* ~/.local/share
-    # cp -rf ~/ArchInstall/configs/.config/* ~/.config
+    cp -rf ~/ArchInstall/configs/.config/* ~/.config
     ### Konsave
     pip install konsave
     python -m konsave -i ~/ArchInstall/configs/kde-config/kde.knsv
@@ -67,6 +67,9 @@ cp -rf ~/ArchInstall/configs/.config/* ~/.config
     sleep 1
   elif [[ $DESKTOP_ENV == "xfce" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always nordic-theme nordic-darker-theme
+    tar -xvf $HOME/ArchInstall/configs/xfce-config/xfce.tar.gz -C $HOME/ArchInstall/configs/xfce-config/
+    sleep 1
+    cp -rf $HOME/ArchInstall/configs/xfce-config/xfce/* $HOME
   fi
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
