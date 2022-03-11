@@ -15,6 +15,12 @@ Download ArchISO from <https://archlinux.org/download/> and put on a USB drive w
 
 From initial Prompt type the following commands:
 
+### using script
+```
+curl -OL mariotani25.github.io/ArchInstall/install | sh
+```
+
+### Manual using git
 ```
 pacman -Sy git
 git clone https://github.com/mariotani25/ArchInstall
@@ -22,7 +28,8 @@ cd ArchInstall
 ./archinstall.sh
 ```
 
-### System Description
+
+## System Description
 This is completely automated arch install of the KDE desktop environment on arch using all the packages I use on a daily basis. 
 
 ## Troubleshooting
