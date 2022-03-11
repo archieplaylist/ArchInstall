@@ -5,6 +5,4 @@ mkinitcpio-firmware
 nerd-fonts-fira-code
 ocs-url
 plymouth-git
-timeshift
-timeshift-autosnap
 ttf-meslo
