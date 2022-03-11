@@ -17,7 +17,8 @@ From initial Prompt type the following commands:
 
 ### Using script
 ```
-curl -L mariotani25.github.io/ArchInstall/install | sh
+curl -OL mariotani25.github.io/ArchInstall/install
+sh install
 ```
 
 ### Alternative : Manual using git
