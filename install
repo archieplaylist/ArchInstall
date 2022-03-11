@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -e
-
 pacman -Sy git --noconfirm
 git clone https://github.com/mariotani25/ArchInstall -b ssd
 sleep 1
