@@ -70,7 +70,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always nordic-theme nordic-darker-theme
     tar -xvf $HOME/ArchInstall/configs/xfce-config/xfce.tar.gz -C $HOME/ArchInstall/configs/xfce-config/
     sleep 1
-    cp -rf $HOME/ArchInstall/configs/xfce-config/xfce/* $HOME
+    cp -rf $HOME/ArchInstall/configs/xfce-config/xfce/.* $HOME
   fi
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
