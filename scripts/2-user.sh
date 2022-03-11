@@ -65,6 +65,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     sleep 1
     python -m konsave -a kde
     sleep 1
+  fi
   elif [[ $DESKTOP_ENV == "xfce" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always nordic-theme nordic-darker-theme
     tar -xvf $HOME/ArchInstall/configs/xfce-config/xfce.tar.gz -C $HOME/ArchInstall/configs/xfce-config/
