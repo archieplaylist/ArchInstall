@@ -29,6 +29,7 @@ layer-shell-qt
 milou
 okular
 packagekit-qt5
+papirus-icon-theme
 plasma-nm
 plasma-pa
 plasma-wayland-session

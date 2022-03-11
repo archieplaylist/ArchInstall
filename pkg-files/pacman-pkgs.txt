@@ -67,7 +67,6 @@ openbsd-netcat
 openssh
 os-prober
 p7zip
-papirus-icon-theme
 patch
 pkgconf
 powerline-fonts

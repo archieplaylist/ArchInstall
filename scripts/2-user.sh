@@ -53,8 +53,7 @@ export PATH=$PATH:~/.local/bin
 if [[ $INSTALL_TYPE == "FULL" ]]; then
 cp -rf ~/ArchInstall/configs/.config/* ~/.config
   if [[ $DESKTOP_ENV == "kde" ]]; then
-    $AUR_HELPER -S --noconfirm --needed --color=always kvantum-theme-nordic-git \
-                                                       sddm-nordic-theme-git
+    $AUR_HELPER -S --noconfirm --needed --color=always sddm-nordic-theme-git
     tar -xvf $HOME/ArchInstall/configs/kde-config/local-kde.tar.gz -C $HOME/ArchInstall/configs/kde-config/
     sleep 1
     mkdir -p ~/.local/share
@@ -66,6 +65,9 @@ cp -rf ~/ArchInstall/configs/.config/* ~/.config
     sleep 1
     python -m konsave -a kde
     sleep 1
+  elif [[ $DESKTOP_ENV == "xfce" ]]; then
+    $AUR_HELPER -S --noconfirm --needed --color=always nordic-theme nordic-darker-theme
+  fi
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
     git clone https://github.com/stojshic/dotfiles-openbox
