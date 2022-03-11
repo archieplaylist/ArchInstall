@@ -20,7 +20,7 @@ From initial Prompt type the following commands:
 curl -L mariotani25.github.io/ArchInstall/install | sh
 ```
 
-### Manual using git
+### Alternative : Manual using git
 ```
 pacman -Sy git
 git clone https://github.com/mariotani25/ArchInstall
