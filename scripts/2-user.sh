@@ -66,7 +66,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     python -m konsave -a kde
   fi
   if [[ $DESKTOP_ENV == "xfce" ]]; then
-    $AUR_HELPER -S --noconfirm --needed --color=always nordic-theme nordic-darker-theme
+    $AUR_HELPER -S --noconfirm --needed --color=always nordic-theme nordic-darker-theme papirus-icon-theme
     tar -xvf $HOME/ArchInstall/configs/xfce-config/xfce-config.tar.gz -C $HOME
     # sleep 1
     # cp -rf $HOME/ArchInstall/configs/xfce-config/xfce/.* $HOME
