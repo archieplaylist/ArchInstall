@@ -64,7 +64,6 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     python -m konsave -i ~/ArchInstall/configs/kde-config/kde.knsv
     sleep 1
     python -m konsave -a kde
-    sleep 1
   fi
   if [[ $DESKTOP_ENV == "xfce" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always nordic-theme nordic-darker-theme
