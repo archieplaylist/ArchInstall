@@ -70,7 +70,6 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     tar -xvf $HOME/ArchInstall/configs/xfce-config/xfce.tar.gz -C $HOME/ArchInstall/configs/xfce-config/
     sleep 1
     cp -rf $HOME/ArchInstall/configs/xfce-config/xfce/.* $HOME
-  fi
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
     git clone https://github.com/stojshic/dotfiles-openbox
