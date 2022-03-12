@@ -1,3 +1,10 @@
 xfce4
 xfce4-goodies
 --END OF MINIMAL INSTALL--
+engrampa
+gvfs
+gvfs-afc
+gvfs-mtp
+gvfs-smb
+kvantum-qt5
+papirus-icon-theme

@@ -51,21 +51,25 @@ export PATH=$PATH:~/.local/bin
 
 # Theming DE if user chose FULL installation
 if [[ $INSTALL_TYPE == "FULL" ]]; then
-cp -rf ~/ArchInstall/configs/.config/* ~/.config
+# cp -rf ~/ArchInstall/configs/.config/* ~/.config
   if [[ $DESKTOP_ENV == "kde" ]]; then
-    $AUR_HELPER -S --noconfirm --needed --color=always kvantum-theme-nordic-git \
-                                                       sddm-nordic-theme-git
+    $AUR_HELPER -S --noconfirm --needed --color=always sddm-nordic-theme-git
     tar -xvf $HOME/ArchInstall/configs/kde-config/local-kde.tar.gz -C $HOME/ArchInstall/configs/kde-config/
     sleep 1
     mkdir -p ~/.local/share
     cp -rf ~/ArchInstall/configs/kde-config/.local/share/* ~/.local/share
-    # cp -rf ~/ArchInstall/configs/.config/* ~/.config
+    cp -rf ~/ArchInstall/configs/.config/* ~/.config
     ### Konsave
     pip install konsave
     python -m konsave -i ~/ArchInstall/configs/kde-config/kde.knsv
     sleep 1
     python -m konsave -a kde
-    sleep 1
+  fi
+  if [[ $DESKTOP_ENV == "xfce" ]]; then
+    $AUR_HELPER -S --noconfirm --needed --color=always nordic-theme nordic-darker-theme papirus-icon-theme
+    tar -xvf $HOME/ArchInstall/configs/xfce-config/xfce-config.tar.gz -C $HOME
+    # sleep 1
+    # cp -rf $HOME/ArchInstall/configs/xfce-config/xfce/.* $HOME
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
     git clone https://github.com/stojshic/dotfiles-openbox
