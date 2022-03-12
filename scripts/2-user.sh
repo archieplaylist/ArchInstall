@@ -67,9 +67,9 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
   fi
   if [[ $DESKTOP_ENV == "xfce" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always nordic-theme nordic-darker-theme
-    tar -xvf $HOME/ArchInstall/configs/xfce-config/xfce.tar.gz -C $HOME/ArchInstall/configs/xfce-config/
-    sleep 1
-    cp -rf $HOME/ArchInstall/configs/xfce-config/xfce/.* $HOME
+    tar -xvf $HOME/ArchInstall/configs/xfce-config/xfce-config.tar.gz -C $HOME
+    # sleep 1
+    # cp -rf $HOME/ArchInstall/configs/xfce-config/xfce/.* $HOME
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
     git clone https://github.com/stojshic/dotfiles-openbox
