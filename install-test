@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 pacman -Sy git --noconfirm
-git clone https://github.com/mariotani25/ArchInstall
+git clone https://github.com/mariotani25/ArchInstall -b test
 sleep 1
 cd ArchInstall
 sleep 1
