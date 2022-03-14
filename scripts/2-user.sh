@@ -57,7 +57,7 @@ if [[ $INSTALL_TYPE == "MINIMAL" ]]; then
 fi
 # Theming DE if user chose FULL installation
 if [[ $INSTALL_TYPE == "FULL" ]]; then
-# cp -rf ~/ArchInstall/configs/.config/* ~/.config
+  cp -rf ~/ArchInstall/configs/.config/* ~/.config
   if [[ $DESKTOP_ENV == "gnome" ]]; then
     echo "LANG=en_US.UTF-8" | tee /etc/locale.conf
   fi
@@ -67,7 +67,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     sleep 1
     mkdir -p ~/.local/share
     cp -rf ~/ArchInstall/configs/kde-config/.local/share/* ~/.local/share
-    cp -rf ~/ArchInstall/configs/.config/* ~/.config
+    # cp -rf ~/ArchInstall/configs/.config/* ~/.config
     ### Konsave
     pip install konsave
     python -m konsave -i ~/ArchInstall/configs/kde-config/kde.knsv
