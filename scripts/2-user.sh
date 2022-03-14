@@ -49,9 +49,18 @@ fi
 
 export PATH=$PATH:~/.local/bin
 
+# Gnome specific fixed
+if [[ $INSTALL_TYPE == "MINIMAL" ]]; then
+  if [[ $DESKTOP_ENV == "gnome" ]]; then
+    echo "LANG=en_US.UTF-8" | tee /etc/locale.conf
+  fi
+fi
 # Theming DE if user chose FULL installation
 if [[ $INSTALL_TYPE == "FULL" ]]; then
 # cp -rf ~/ArchInstall/configs/.config/* ~/.config
+    if [[ $DESKTOP_ENV == "gnome" ]]; then
+    echo "LANG=en_US.UTF-8" | tee /etc/locale.conf
+  fi
   if [[ $DESKTOP_ENV == "kde" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always sddm-nordic-theme-git
     tar -xvf $HOME/ArchInstall/configs/kde-config/local-kde.tar.gz -C $HOME/ArchInstall/configs/kde-config/
