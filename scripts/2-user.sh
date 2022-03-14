@@ -58,6 +58,7 @@ fi
 # Theming DE if user chose FULL installation
 if [[ $INSTALL_TYPE == "FULL" ]]; then
   cp -rf ~/ArchInstall/configs/.config/* ~/.config
+  
   if [[ $DESKTOP_ENV == "gnome" ]]; then
     echo "LANG=en_US.UTF-8" | tee /etc/locale.conf
 
@@ -79,7 +80,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     tar -xvf $HOME/ArchInstall/configs/xfce-config/xfce-config.tar.gz -C $HOME
     # sleep 1
     # cp -rf $HOME/ArchInstall/configs/xfce-config/xfce/.* $HOME
-    
+
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
     git clone https://github.com/stojshic/dotfiles-openbox
