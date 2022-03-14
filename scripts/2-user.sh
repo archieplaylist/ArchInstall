@@ -57,18 +57,19 @@ if [[ $INSTALL_TYPE == "MINIMAL" ]]; then
 fi
 # Theming DE if user chose FULL installation
 if [[ $INSTALL_TYPE == "FULL" ]]; then
-  cp -rf ~/ArchInstall/configs/.config/* ~/.config
-  
+  # cp -rf ~/ArchInstall/configs/.config/* ~/.config
+
   if [[ $DESKTOP_ENV == "gnome" ]]; then
+    cp -rf ~/ArchInstall/configs/.config/* ~/.config
     echo "LANG=en_US.UTF-8" | tee /etc/locale.conf
 
   elif [[ $DESKTOP_ENV == "kde" ]]; then
-    $AUR_HELPER -S --noconfirm --needed --color=always sddm-nordic-theme-git
+    $AUR_HELPER -S --noconfirm --needed --color=always sddm-nordic-theme-git rootactions-servicemenu
     tar -xvf $HOME/ArchInstall/configs/kde-config/local-kde.tar.gz -C $HOME/ArchInstall/configs/kde-config/
     sleep 1
     mkdir -p ~/.local/share
     cp -rf ~/ArchInstall/configs/kde-config/.local/share/* ~/.local/share
-    # cp -rf ~/ArchInstall/configs/.config/* ~/.config
+    cp -rf ~/ArchInstall/configs/.config/* ~/.config
     ### Konsave
     pip install konsave
     python -m konsave -i ~/ArchInstall/configs/kde-config/kde.knsv
@@ -78,6 +79,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
   elif [[ $DESKTOP_ENV == "xfce" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always nordic-theme nordic-darker-theme papirus-icon-theme
     tar -xvf $HOME/ArchInstall/configs/xfce-config/xfce-config.tar.gz -C $HOME
+    cp -rf ~/ArchInstall/configs/.config/* ~/.config
     # sleep 1
     # cp -rf $HOME/ArchInstall/configs/xfce-config/xfce/.* $HOME
 
