@@ -58,7 +58,7 @@ fi
 # Theming DE if user chose FULL installation
 if [[ $INSTALL_TYPE == "FULL" ]]; then
 # cp -rf ~/ArchInstall/configs/.config/* ~/.config
-    if [[ $DESKTOP_ENV == "gnome" ]]; then
+  if [[ $DESKTOP_ENV == "gnome" ]]; then
     echo "LANG=en_US.UTF-8" | tee /etc/locale.conf
   fi
   if [[ $DESKTOP_ENV == "kde" ]]; then
