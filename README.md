@@ -29,6 +29,10 @@ cd ArchInstall
 ./archinstall.sh
 ```
 
+### fixes
+If you choose gnome DE and gnome terminal doesn't launch run this on tty
+`echo "LANG=en_US.UTF-8" | sudo  tee /etc/locale.conf`
+
 
 ## System Description
 This is completely automated arch install of the desktop environment on arch using all the packages I use on a daily basis. 
