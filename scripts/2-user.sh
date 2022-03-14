@@ -60,8 +60,8 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
   cp -rf ~/ArchInstall/configs/.config/* ~/.config
   if [[ $DESKTOP_ENV == "gnome" ]]; then
     echo "LANG=en_US.UTF-8" | tee /etc/locale.conf
-  fi
-  if [[ $DESKTOP_ENV == "kde" ]]; then
+
+  elif [[ $DESKTOP_ENV == "kde" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always sddm-nordic-theme-git
     tar -xvf $HOME/ArchInstall/configs/kde-config/local-kde.tar.gz -C $HOME/ArchInstall/configs/kde-config/
     sleep 1
@@ -73,12 +73,13 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     python -m konsave -i ~/ArchInstall/configs/kde-config/kde.knsv
     sleep 1
     python -m konsave -a kde
-  fi
-  if [[ $DESKTOP_ENV == "xfce" ]]; then
+
+  elif [[ $DESKTOP_ENV == "xfce" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always nordic-theme nordic-darker-theme papirus-icon-theme
     tar -xvf $HOME/ArchInstall/configs/xfce-config/xfce-config.tar.gz -C $HOME
     # sleep 1
     # cp -rf $HOME/ArchInstall/configs/xfce-config/xfce/.* $HOME
+    
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
     git clone https://github.com/stojshic/dotfiles-openbox
