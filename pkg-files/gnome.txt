@@ -1,4 +1,5 @@
 gnome
 gnome-software-packagekit-plugin
 --END OF MINIMAL INSTALL--
-gnome-extra
+gnome-tweaks
+gnome-shell-extension-pop-shell
