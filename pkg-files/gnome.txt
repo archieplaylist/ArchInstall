@@ -1,6 +1,6 @@
 gnome
+gdm
 gnome-software-packagekit-plugin
 --END OF MINIMAL INSTALL--
 gnome-tweaks
-gnome-shell-extension-pop-shell
 papirus-icon-theme

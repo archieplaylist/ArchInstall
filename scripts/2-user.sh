@@ -60,8 +60,15 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
   # cp -rf ~/ArchInstall/configs/.config/* ~/.config
 
   if [[ $DESKTOP_ENV == "gnome" ]]; then
+    ### AUR INSTALL
+    $AUR_HELPER -S --noconfirm --needed --color=always gnome-shell-extension-pop-shell-git
     cp -rf ~/ArchInstall/configs/.config/* ~/.config
-    echo "LANG=en_US.UTF-8" | tee /etc/locale.conf
+     ### fix-locale
+    echo LANG=en_US.UTF-8 >> /etc/locale.conf
+    # echo "LC_ALL=en_US.UTF-8" | tee -a /etc/environment
+    # echo "en_US.UTF-8 UTF-8" | tee -a /etc/locale.gen
+    # echo "LANG=en_US.UTF-8" | tee -a /etc/locale.conf
+    # locale-gen en_US.UTF-8
 
   elif [[ $DESKTOP_ENV == "kde" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always sddm-nordic-theme-git rootactions-servicemenu
