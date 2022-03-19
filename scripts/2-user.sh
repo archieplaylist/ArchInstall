@@ -57,16 +57,19 @@ if [[ $INSTALL_TYPE == "MINIMAL" ]]; then
 fi
 # Theming DE if user chose FULL installation
 if [[ $INSTALL_TYPE == "FULL" ]]; then
-  cp -rf ~/ArchInstall/configs/.config/* ~/.config
+  cp -rvf ~/ArchInstall/configs/.config/* ~/.config
+  flatpak install -y flatseal
+  chsh -s /usr/bin/zsh
 
   if [[ $DESKTOP_ENV == "gnome" ]]; then
   ### AUR INSTALL
     $AUR_HELPER -S --noconfirm --needed --color=always gnome-shell-extension-pop-shell-git \
+                                                       gnome-shell-extension-dash-to-dock \
                                                        chrome-gnome-shell \
                                                        nordic-theme \
                                                        nordic-darker-theme \
                                                        papirus-icon-theme
-    cp -rf ~/ArchInstall/configs/.config/* ~/.config
+    # cp -rvf ~/ArchInstall/configs/.config/* ~/.config
     cp -rvf ~/ArchInstall/configs/Wallpaper ~/Pictures
   ### fix-locale
     echo LANG=en_US.UTF-8 >> /etc/locale.conf
