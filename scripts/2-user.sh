@@ -57,9 +57,10 @@ if [[ $INSTALL_TYPE == "MINIMAL" ]]; then
 fi
 # Theming DE if user chose FULL installation
 if [[ $INSTALL_TYPE == "FULL" ]]; then
-  cp -rvf ~/ArchInstall/configs/.config ~/.config
+  mkdir -p ~/.config
+  cp -rvf ~/ArchInstall/configs/.config ~/.config/
   flatpak install -y flatseal
-  # chsh -s /usr/bin/zsh
+  sudo chsh -s /usr/bin/zsh ${whoami}
   cp -rvf ~/ArchInstall/configs/.p10k.zsh ~/
 
   if [[ $DESKTOP_ENV == "gnome" ]]; then
@@ -71,9 +72,10 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
                                                        nordic-darker-theme \
                                                        papirus-icon-theme
     # cp -rvf ~/ArchInstall/configs/.config/* ~/.config
-    cp -rvf ~/ArchInstall/configs/Wallpaper ~/Pictures
+    mkdir -p ~/Pictures
+    cp -rvf ~/ArchInstall/configs/Wallpaper ~/Pictures/
   ### fix-locale
-    echo LANG=en_US.UTF-8 >> /etc/locale.conf
+    echo "LANG=en_US.UTF-8" | sudo tee /etc/locale.conf
 
   elif [[ $DESKTOP_ENV == "kde" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always sddm-nordic-theme-git \
