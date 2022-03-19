@@ -52,7 +52,7 @@ export PATH=$PATH:~/.local/bin
 # Gnome specific fixed
 if [[ $INSTALL_TYPE == "MINIMAL" ]]; then
   if [[ $DESKTOP_ENV == "gnome" ]]; then
-    echo "LANG=en_US.UTF-8" | tee /etc/locale.conf
+    echo LANG=en_US.UTF-8 >> /etc/locale.conf
   fi
 fi
 # Theming DE if user chose FULL installation
@@ -62,10 +62,12 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
   if [[ $DESKTOP_ENV == "gnome" ]]; then
   ### AUR INSTALL
     $AUR_HELPER -S --noconfirm --needed --color=always gnome-shell-extension-pop-shell-git \
+                                                       chrome-gnome-shell \
                                                        nordic-theme \
                                                        nordic-darker-theme \
                                                        papirus-icon-theme
     cp -rf ~/ArchInstall/configs/.config/* ~/.config
+    cp -rvf ~/ArchInstall/configs/Wallpaper ~/Pictures
   ### fix-locale
     echo LANG=en_US.UTF-8 >> /etc/locale.conf
 
