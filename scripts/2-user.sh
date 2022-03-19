@@ -57,34 +57,38 @@ if [[ $INSTALL_TYPE == "MINIMAL" ]]; then
 fi
 # Theming DE if user chose FULL installation
 if [[ $INSTALL_TYPE == "FULL" ]]; then
-  # cp -rf ~/ArchInstall/configs/.config/* ~/.config
+  cp -rf ~/ArchInstall/configs/.config/* ~/.config
 
   if [[ $DESKTOP_ENV == "gnome" ]]; then
-    ### AUR INSTALL
-    $AUR_HELPER -S --noconfirm --needed --color=always gnome-shell-extension-pop-shell-git
+  ### AUR INSTALL
+    $AUR_HELPER -S --noconfirm --needed --color=always gnome-shell-extension-pop-shell-git \
+                                                       nordic-theme \
+                                                       nordic-darker-theme \
+                                                       papirus-icon-theme
     cp -rf ~/ArchInstall/configs/.config/* ~/.config
-     ### fix-locale
+  ### fix-locale
     echo LANG=en_US.UTF-8 >> /etc/locale.conf
-    # echo "LC_ALL=en_US.UTF-8" | tee -a /etc/environment
-    # echo "en_US.UTF-8 UTF-8" | tee -a /etc/locale.gen
-    # echo "LANG=en_US.UTF-8" | tee -a /etc/locale.conf
-    # locale-gen en_US.UTF-8
 
   elif [[ $DESKTOP_ENV == "kde" ]]; then
-    $AUR_HELPER -S --noconfirm --needed --color=always sddm-nordic-theme-git rootactions-servicemenu
+    $AUR_HELPER -S --noconfirm --needed --color=always sddm-nordic-theme-git \
+                                                       rootactions-servicemenu
+  ### Apply Themes
     tar -xvf $HOME/ArchInstall/configs/kde-config/local-kde.tar.gz -C $HOME/ArchInstall/configs/kde-config/
     sleep 1
     mkdir -p ~/.local/share
     cp -rf ~/ArchInstall/configs/kde-config/.local/share/* ~/.local/share
     cp -rf ~/ArchInstall/configs/.config/* ~/.config
-    ### Konsave
+  ### Konsave
     pip install konsave
     python -m konsave -i ~/ArchInstall/configs/kde-config/kde.knsv
     sleep 1
     python -m konsave -a kde
 
   elif [[ $DESKTOP_ENV == "xfce" ]]; then
-    $AUR_HELPER -S --noconfirm --needed --color=always nordic-theme nordic-darker-theme papirus-icon-theme
+    $AUR_HELPER -S --noconfirm --needed --color=always nordic-theme \
+                                                       nordic-darker-theme \
+                                                       papirus-icon-theme
+  ### Apply Themes
     tar -xvf $HOME/ArchInstall/configs/xfce-config/xfce-config.tar.gz -C $HOME
     cp -rf ~/ArchInstall/configs/.config/* ~/.config
     # sleep 1
