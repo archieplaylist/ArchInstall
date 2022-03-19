@@ -60,7 +60,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
   mkdir -p ~/.config
   cp -rvf ~/ArchInstall/configs/.config ~/.config/
   flatpak install -y flatseal
-  sudo chsh -s /usr/bin/zsh ${whoami}
+  sudo chsh -s /usr/bin/zsh mario
   cp -rvf ~/ArchInstall/configs/.p10k.zsh ~/
 
   if [[ $DESKTOP_ENV == "gnome" ]]; then
@@ -73,7 +73,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
                                                        papirus-icon-theme
     # cp -rvf ~/ArchInstall/configs/.config/* ~/.config
     mkdir -p ~/Pictures
-    cp -rvf ~/ArchInstall/configs/Wallpaper ~/Pictures/
+    cp -rvf ~/ArchInstall/configs/wallpaper ~/Pictures/
   ### fix-locale
     echo "LANG=en_US.UTF-8" | sudo tee /etc/locale.conf
 
