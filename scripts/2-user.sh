@@ -60,6 +60,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
   cp -rvf ~/ArchInstall/configs/.config/* ~/.config
   flatpak install -y flatseal
   chsh -s /usr/bin/zsh
+  cp -rvf ~/ArchInstall/configs/.p10k.zsh ~/
 
   if [[ $DESKTOP_ENV == "gnome" ]]; then
   ### AUR INSTALL
