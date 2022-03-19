@@ -38,6 +38,7 @@ efibootmgr
 egl-wayland
 exfat-utils
 firefox
+flatpak
 flex
 fuse2
 fuse3
