@@ -60,7 +60,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
   mkdir -p ~/.config
   cp -rvf ~/ArchInstall/configs/.config ~/.config/
   flatpak install -y flatseal
-  sudo chsh -s /usr/bin/zsh mario
+  sudo chsh -s /usr/bin/zsh $USERNAME
   cp -rvf ~/ArchInstall/configs/.p10k.zsh ~/
 
   if [[ $DESKTOP_ENV == "gnome" ]]; then
