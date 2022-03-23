@@ -99,6 +99,8 @@ systemctl enable bluetooth
 echo "  Bluetooth enabled"
 systemctl enable fstrim.timer
 echo "  Periodic Trim enabled"
+systemctl enable avahi-daemon.service
+echo "  Avahi enabled"
 
 if [[ "${FS}" == "luks" || "${FS}" == "btrfs" ]]; then
 echo -ne "
