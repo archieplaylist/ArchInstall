@@ -79,7 +79,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
 
   elif [[ $DESKTOP_ENV == "kde" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always sddm-nordic-theme-git \
-                                                       rootactions-servicemenu
+                                                       kde-servicemenus-rootactions
   ### Apply Themes
     tar -xvf $HOME/ArchInstall/configs/kde-config/local-kde.tar.gz -C $HOME/ArchInstall/configs/kde-config/
     sleep 1
@@ -94,8 +94,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
 
   elif [[ $DESKTOP_ENV == "mate" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always nordic-theme \
-                                                       nordic-darker-theme \
-                                                       papirus-icon-theme
+                                                       nordic-darker-theme
     mkdir -p ~/Pictures
     cp -rvf ~/ArchInstall/configs/wallpaper ~/Pictures/
 

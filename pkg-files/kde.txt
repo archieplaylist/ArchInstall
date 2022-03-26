@@ -36,6 +36,8 @@ plasma-pa
 plasma-wayland-session
 powerdevil
 print-manager
+sddm
+sddm-kcm
 spectacle
 systemsettings
 xdg-desktop-portal-kde
