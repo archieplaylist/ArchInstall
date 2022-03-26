@@ -86,6 +86,8 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     mkdir -p ~/.local/share
     cp -rf ~/ArchInstall/configs/kde-config/.local/share/* ~/.local/share
     cp -rf ~/ArchInstall/configs/.config/* ~/.config
+    mkdir -p ~/Pictures
+    cp -rvf ~/ArchInstall/configs/wallpaper ~/Pictures/
   ### Konsave
     pip install konsave
     python -m konsave -s kde-default
