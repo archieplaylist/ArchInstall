@@ -92,8 +92,8 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     pip install konsave
     python -m konsave -s kde-default
     python -m konsave -i ~/ArchInstall/configs/kde-config/kde.knsv
-    # sleep 1
-    # python -m konsave -a kde
+    sleep 1
+    python -m konsave -a kde
 
   elif [[ $DESKTOP_ENV == "mate" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always nordic-theme \
