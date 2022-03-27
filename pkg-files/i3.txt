@@ -1,0 +1,13 @@
+alacritty
+blueberry
+dunst
+i3-gaps
+rofi
+mpd
+picom
+polybar
+polkit-gnome
+thunar
+xfce4-power-manager
+xorg-xsetroot
+--END OF MINIMAL INSTALL--

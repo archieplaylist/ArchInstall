@@ -110,6 +110,18 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     cp -rf ~/ArchInstall/configs/.config/* ~/.config
     # sleep 1
     # cp -rf $HOME/ArchInstall/configs/xfce-config/xfce/.* $HOME
+  
+  elif [ $DESKTOP_ENV == "i3" ]]; then
+  ### Add archcraft repo
+    echo "[archcraft]" >>  /etc/pacman.conf
+    echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf
+    echo "Include = /etc/pacman.d/archcraft-mirrorlist" >> /etc/pacman.conf
+    echo "Server=https://pkgs.archcraft.io/$arch" | sudo tee /etc/pacman.d/archcraft-mirrorlist
+    $AUR_HELPER -Sy --noconfirm --needed --color=always archcraft-i3wm \
+                                                        archcraft-fonts \
+                                                        archcraft-scripts \
+                                                        archcraft-artworks \
+                                                        ksuperkey
 
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
