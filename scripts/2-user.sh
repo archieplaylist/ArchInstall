@@ -117,12 +117,15 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     sudo bash -c 'echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf'
     sudo bash -c 'echo "Include = /etc/pacman.d/archcraft-mirrorlist" >> /etc/pacman.conf'
     sudo cp -rf ~/ArchInstall/configs/i3-config/archcraft-mirrorlist /etc/pacman.d/
+    sleep 2
     $AUR_HELPER -Syy
     $AUR_HELPER -Sy --noconfirm --needed --color=always archcraft-i3wm \
                                                         archcraft-fonts \
                                                         archcraft-scripts \
                                                         archcraft-artworks \
-                                                        ksuperkey
+                                                        polybar \
+                                                        ksuperkey \
+                                                        betterlockscreen
 
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~

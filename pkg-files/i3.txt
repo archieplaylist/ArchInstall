@@ -2,12 +2,13 @@ alacritty
 blueberry
 dunst
 i3-gaps
-rofi
+lxappearance-gtk3
 mpd
 nm-connection-editor
+pavucontrol
 picom
-polybar
 polkit-gnome
+rofi
 thunar
 xfce4-power-manager
 xorg-xsetroot

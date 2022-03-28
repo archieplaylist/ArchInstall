@@ -1,8 +1,10 @@
 --END OF MINIMAL INSTALL--
 autojump
 kvantum-theme-nordic-git
+nordic-theme
 mkinitcpio-firmware
 nerd-fonts-fira-code
 ocs-url
 plymouth-git
 ttf-meslo
+volantes-cursor
