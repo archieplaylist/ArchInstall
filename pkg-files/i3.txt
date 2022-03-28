@@ -4,6 +4,7 @@ dunst
 i3-gaps
 rofi
 mpd
+nm-connection-editor
 picom
 polybar
 polkit-gnome

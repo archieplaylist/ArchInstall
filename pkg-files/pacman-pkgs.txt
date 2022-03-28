@@ -27,7 +27,6 @@ bluez-libs
 bluez-utils
 bridge-utils
 btrfs-progs
-code
 cronie
 cups
 dialog
@@ -90,6 +89,7 @@ ufw
 unrar
 unzip
 which
+xed
 zip
 zsh
 zsh-syntax-highlighting
