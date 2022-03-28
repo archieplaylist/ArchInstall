@@ -50,12 +50,15 @@ grub-customizer
 gst-libav
 gst-plugins-good
 gst-plugins-ugly
+gst-plugin-pipewire
 haveged
 htop
 libdvdcss
 libtool
 lsof
 lzop
+lib32-pipewire
+lib32-pipewire-jack
 m4
 make
 mpv
@@ -73,7 +76,6 @@ pipewire
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
-pipewire-media-session
 python-notify2
 python-psutil
 python-pyqt5
@@ -89,6 +91,7 @@ ufw
 unrar
 unzip
 which
+wireplumber
 xed
 zip
 zsh
