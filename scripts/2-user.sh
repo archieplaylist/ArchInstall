@@ -116,7 +116,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     sudo bash -c 'echo "[archcraft]" >>  /etc/pacman.conf'
     sudo bash -c 'echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf'
     sudo bash -c 'echo "Include = /etc/pacman.d/archcraft-mirrorlist" >> /etc/pacman.conf'
-    echo "Server=https://pkgs.archcraft.io/$arch" | sudo tee /etc/pacman.d/archcraft-mirrorlist
+    sudo cp -rf ~/ArchInstall/configs/i3-config/archcraft-mirrorlist /etc/pacman.d/
     $AUR_HELPER -Sy --noconfirm --needed --color=always archcraft-i3wm \
                                                         archcraft-fonts \
                                                         archcraft-scripts \
