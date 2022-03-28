@@ -126,6 +126,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
                                                         polybar \
                                                         ksuperkey \
                                                         betterlockscreen
+    
 
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
