@@ -1,17 +1,22 @@
 alacritty
 blueberry
 dunst
+engrampa
 gpicview
 i3-gaps
 lxappearance-gtk3
 mpd
 nm-connection-editor
+parcellite
 pavucontrol
 picom
 polkit-gnome
 power-profiles-daemon
 rofi
 thunar
+thunar-archive-plugin
+thunar-volman
+thunar-media-tags-plugin
 xfce4-power-manager
 xorg-xsetroot
 --END OF MINIMAL INSTALL--
