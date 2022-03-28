@@ -111,7 +111,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     # sleep 1
     # cp -rf $HOME/ArchInstall/configs/xfce-config/xfce/.* $HOME
   
-  elif [ $DESKTOP_ENV == "i3" ]]; then
+  elif [[ $DESKTOP_ENV == "i3" ]]; then
   ### Add archcraft repo
     echo "[archcraft]" >>  /etc/pacman.conf
     echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf
