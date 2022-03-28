@@ -1,6 +1,7 @@
 alacritty
 blueberry
 dunst
+gpicview
 i3-gaps
 lxappearance-gtk3
 mpd
@@ -8,6 +9,7 @@ nm-connection-editor
 pavucontrol
 picom
 polkit-gnome
+power-profiles-daemon
 rofi
 thunar
 xfce4-power-manager
