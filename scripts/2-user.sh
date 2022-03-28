@@ -113,9 +113,9 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
   
   elif [[ $DESKTOP_ENV == "i3" ]]; then
   ### Add archcraft repo
-    echo "[archcraft]" >>  /etc/pacman.conf
-    echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf
-    echo "Include = /etc/pacman.d/archcraft-mirrorlist" >> /etc/pacman.conf
+    sudo bash -c 'echo "[archcraft]" >>  /etc/pacman.conf'
+    sudo bash -c 'echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf'
+    sudo bash -c 'echo "Include = /etc/pacman.d/archcraft-mirrorlist" >> /etc/pacman.conf'
     echo "Server=https://pkgs.archcraft.io/$arch" | sudo tee /etc/pacman.d/archcraft-mirrorlist
     $AUR_HELPER -Sy --noconfirm --needed --color=always archcraft-i3wm \
                                                         archcraft-fonts \
