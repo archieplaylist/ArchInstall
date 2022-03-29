@@ -118,7 +118,8 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
                                                         papirus-icon-theme
     cd ~
     git clone https://github.com/mariotani25/dotfiles-i3
-    ./dotfiles-i3/install.sh
+    cd dotfiles-i3
+    ./install.sh
     sudo cp -rvf ~/ArchInstall/configs/i3-config/environment /etc/environment
     
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
