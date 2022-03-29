@@ -122,6 +122,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     $AUR_HELPER -Sy --noconfirm --needed --color=always polybar \
                                                         ksuperkey \
                                                         betterlockscreen
+    cd ~/ArchInstall
     git submodule init
     git submodule update
     makepkg -si --noconfirm --needed ~/ArchInstall/archcraft-skeleton/archcraft-skeleton/
