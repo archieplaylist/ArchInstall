@@ -74,7 +74,7 @@ elif [[ "${DESKTOP_ENV}" == "openbox" ]]; then
 
 else
   if [[ ! "${DESKTOP_ENV}" == "server"  ]]; then
-  sudo pacman -S --noconfirm --needed --color=always lightdm lightdm-gtk-greeter
+  sudo pacman -S --noconfirm --needed --color=always lightdm lightdm-slick-greeter
   systemctl enable lightdm.service
   fi
 fi
