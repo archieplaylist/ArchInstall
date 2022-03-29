@@ -116,25 +116,9 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     $AUR_HELPER -Sy --noconfirm --needed --color=always polybar \
                                                         ksuperkey \
                                                         betterlockscreen
-    cd ~/ArchInstall
-    git submodule init
-    git submodule update
-    cd ~/ArchInstall/archcraft-skeleton/archcraft-skeleton/
-    makepkg -si --noconfirm --needed 
-    sleep 1
-    cd ~/ArchInstall/archcraft-packages/archcraft-artworks/
-    makepkg -si --noconfirm --needed 
-    sleep 1
-    cd ~/ArchInstall/archcraft-packages/archcraft-fonts/
-    makepkg -si --noconfirm --needed 
-    sleep 1
-    cd ~/ArchInstall/archcraft-packages/archcraft-scripts/
-    makepkg -si --noconfirm --needed 
-    sleep 1
-    cd ~/ArchInstall/archcraft-i3wm/
-    makepkg -si --noconfirm --needed
-    sleep 1
     cd ~
+    git clone https://github.com/mariotani25/dotfiles-i3
+    ./dotfiles-i3/install.sh
     # cp -rvf ~/ArchInstall/configs/.config/i3 ~/.config/
 
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
