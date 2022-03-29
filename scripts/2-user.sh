@@ -59,7 +59,6 @@ fi
 if [[ $INSTALL_TYPE == "FULL" ]]; then
   mkdir -p ~/.config
   cp -rvf ~/ArchInstall/configs/.config ~/.config/
-  # flatpak install -y flatseal
   sudo chsh -s /usr/bin/zsh $USERNAME
   cp -rvf ~/ArchInstall/configs/.p10k.zsh ~/
 
@@ -71,7 +70,6 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
                                                        nordic-theme \
                                                        nordic-darker-theme \
                                                        papirus-icon-theme
-    # cp -rvf ~/ArchInstall/configs/.config/* ~/.config
     mkdir -p ~/Pictures
     cp -rvf ~/ArchInstall/configs/wallpaper ~/Pictures/
   ### fix-locale
@@ -106,8 +104,8 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
                                                        nordic-darker-theme \
                                                        papirus-icon-theme
   ### Apply Themes
-    tar -xvf $HOME/ArchInstall/configs/xfce-config/xfce-config.tar.gz -C $HOME
-    cp -rf ~/ArchInstall/configs/.config/* ~/.config
+    # tar -xvf $HOME/ArchInstall/configs/xfce-config/xfce-config.tar.gz -C $HOME
+    # cp -rf ~/ArchInstall/configs/.config/* ~/.config
     # sleep 1
     # cp -rf $HOME/ArchInstall/configs/xfce-config/xfce/.* $HOME
   
@@ -115,11 +113,14 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     $AUR_HELPER -Syy
     $AUR_HELPER -Sy --noconfirm --needed --color=always polybar \
                                                         ksuperkey \
-                                                        betterlockscreen
+                                                        betterlockscreen \
+                                                        nordic-darker-theme \
+                                                        papirus-icon-theme
     cd ~
     git clone https://github.com/mariotani25/dotfiles-i3
     ./dotfiles-i3/install.sh
-
+    sudo cp -rvf ~/ArchInstall/configs/i3-config/environment /etc/environment
+    
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
     git clone https://github.com/stojshic/dotfiles-openbox
