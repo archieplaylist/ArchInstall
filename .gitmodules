@@ -1,0 +1,3 @@
+[submodule "archcraft-packages"]
+	path = archcraft-packages
+	url = https://github.com/archcraft-os/archcraft-packages.git
