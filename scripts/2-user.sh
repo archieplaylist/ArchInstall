@@ -135,7 +135,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     makepkg -si --noconfirm --needed
     sleep 1
     cd ~
-    cp -rvf ~/ArchInstall/configs/.config/i3 ~/.config/
+    # cp -rvf ~/ArchInstall/configs/.config/i3 ~/.config/
 
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
