@@ -3,8 +3,8 @@
         "autogain": {
             "input-gain": 0.0,
             "output-gain": 0.0,
-            "reference": "Integrated",
-            "target": -9.99999999999998
+            "reference": "Geometric Mean",
+            "target": -7.0
         },
         "blocklist": [],
         "equalizer": {
@@ -358,9 +358,23 @@
             },
             "split-channels": false
         },
+        "gate": {
+            "attack": 20.0,
+            "detection": "RMS",
+            "input-gain": 0.0,
+            "knee": 9.0,
+            "makeup": 0.0,
+            "output-gain": 0.0,
+            "range": -24.0,
+            "ratio": 2.0,
+            "release": 250.0,
+            "stereo-link": "Maximum",
+            "threshold": -18.0
+        },
         "plugins_order": [
             "equalizer",
-            "autogain"
+            "autogain",
+            "gate"
         ]
     }
 }

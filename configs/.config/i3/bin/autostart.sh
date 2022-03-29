@@ -22,6 +22,9 @@ xsetroot -cursor_name left_ptr
 # Enable power management
 xfce4-power-manager &
 
+# Clipboard
+parcellite &
+
 # Enable Super Keys For Menu
 ksuperkey -e 'Super_L=Alt_L|F1' &
 ksuperkey -e 'Super_R=Alt_L|F1' &
