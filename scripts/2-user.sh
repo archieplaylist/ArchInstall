@@ -119,7 +119,6 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     cd ~
     git clone https://github.com/mariotani25/dotfiles-i3
     ./dotfiles-i3/install.sh
-    # cp -rvf ~/ArchInstall/configs/.config/i3 ~/.config/
 
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
