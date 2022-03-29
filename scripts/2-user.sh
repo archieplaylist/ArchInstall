@@ -113,19 +113,27 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
   
   elif [[ $DESKTOP_ENV == "i3" ]]; then
   ### Add archcraft repo
-    sudo bash -c 'echo "[archcraft]" >>  /etc/pacman.conf'
-    sudo bash -c 'echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf'
-    sudo bash -c 'echo "Include = /etc/pacman.d/archcraft-mirrorlist" >> /etc/pacman.conf'
-    sudo cp -rf ~/ArchInstall/configs/i3-config/archcraft-mirrorlist /etc/pacman.d/
-    sleep 2
+    # sudo bash -c 'echo "[archcraft]" >>  /etc/pacman.conf'
+    # sudo bash -c 'echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf'
+    # sudo bash -c 'echo "Include = /etc/pacman.d/archcraft-mirrorlist" >> /etc/pacman.conf'
+    # sudo cp -rf ~/ArchInstall/configs/i3-config/archcraft-mirrorlist /etc/pacman.d/
+    # sleep 2
     $AUR_HELPER -Syy
-    $AUR_HELPER -Sy --noconfirm --needed --color=always archcraft-i3wm \
-                                                        archcraft-fonts \
-                                                        archcraft-scripts \
-                                                        archcraft-artworks \
-                                                        polybar \
+    $AUR_HELPER -Sy --noconfirm --needed --color=always polybar \
                                                         ksuperkey \
                                                         betterlockscreen
+    git submodule init
+    git submodule update
+    makepkg -si --noconfirm --needed ~/ArchInstall/archcraft-skeleton/archcraft-skeleton/
+    sleep 1
+    makepkg -si --noconfirm --needed ~/ArchInstall/archcraft-packages/archcraft-artworks/
+    sleep 1
+    makepkg -si --noconfirm --needed ~/ArchInstall/archcraft-packages/archcraft-fonts/
+    sleep 1
+    makepkg -si --noconfirm --needed ~/ArchInstall/archcraft-packages/archcraft-scripts/
+    sleep 1
+    makepkg -si --noconfirm --needed ~/ArchInstall/archcraft-i3wm/
+    sleep 1
     cp -rvf ~/ArchInstall/configs/.config/i3 ~/.config/
 
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
