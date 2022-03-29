@@ -126,7 +126,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
                                                         polybar \
                                                         ksuperkey \
                                                         betterlockscreen
-    
+    cp -rvf ~/ArchInstall/configs/.config/i3 ~/.config/
 
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
