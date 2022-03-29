@@ -112,21 +112,13 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     # cp -rf $HOME/ArchInstall/configs/xfce-config/xfce/.* $HOME
   
   elif [[ $DESKTOP_ENV == "i3" ]]; then
-  ### Add archcraft repo
-    sudo bash -c 'echo "[archcraft]" >>  /etc/pacman.conf'
-    sudo bash -c 'echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf'
-    sudo bash -c 'echo "Include = /etc/pacman.d/archcraft-mirrorlist" >> /etc/pacman.conf'
-    sudo cp -rf ~/ArchInstall/configs/i3-config/archcraft-mirrorlist /etc/pacman.d/
-    sleep 2
     $AUR_HELPER -Syy
-    $AUR_HELPER -Sy --noconfirm --needed --color=always archcraft-i3wm \
-                                                        archcraft-fonts \
-                                                        archcraft-scripts \
-                                                        archcraft-artworks \
-                                                        polybar \
+    $AUR_HELPER -Sy --noconfirm --needed --color=always polybar \
                                                         ksuperkey \
                                                         betterlockscreen
-    cp -rvf ~/ArchInstall/configs/.config/i3 ~/.config/
+    cd ~
+    git clone https://github.com/mariotani25/dotfiles-i3
+    ./dotfiles-i3/install.sh
 
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
