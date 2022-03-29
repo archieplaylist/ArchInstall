@@ -1,3 +1,9 @@
 [submodule "archcraft-packages"]
 	path = archcraft-packages
 	url = https://github.com/archcraft-os/archcraft-packages.git
+[submodule "archcraft-skeleton"]
+	path = archcraft-skeleton
+	url = https://github.com/archcraft-os/archcraft-skeleton
+[submodule "archcraft-i3wm"]
+	path = archcraft-i3wm
+	url = https://github.com/archcraft-os/archcraft-i3wm
