@@ -30,7 +30,8 @@ ksuperkey -e 'Super_L=Alt_L|F1' &
 ksuperkey -e 'Super_R=Alt_L|F1' &
 
 # Restore wallpaper
-hsetroot -cover ~/.config/i3/wallpapers/Sprinkle.svg
+hsetroot -cover ~/.config/i3/wallpapers/sunset-kde.svg
+# nitrogen --restore &
 
 # Lauch notification daemon
 ~/.config/i3/bin/i3dunst.sh
@@ -40,6 +41,8 @@ hsetroot -cover ~/.config/i3/wallpapers/Sprinkle.svg
 
 # Lauch compositor
 ~/.config/i3/bin/i3comp.sh
+
+#lxsession &
 
 # Start mpd
 # exec mpd &

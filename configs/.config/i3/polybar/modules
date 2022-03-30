@@ -360,7 +360,7 @@ format-background = ${color.BGL}
 ;   %time%
 ; Default: %date%
 label = %time%
-label-font = 4
+label-font = 2
 label-foreground = ${color.CYAN}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -708,7 +708,7 @@ sink = alsa_output.pci-0000_12_00.3.analog-stereo
 
 ; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
 ; Default: true
-use-ui-max = false
+use-ui-max = true
 
 ; Interval for volume increase/decrease (in percent points)
 ; Default: 5
@@ -738,7 +738,7 @@ label-muted = " Mute"
 label-muted-foreground = ${color.FGA}
 
 ; Only applies if <bar-volume> is used
-bar-volume-width = 10
+bar-volume-width = 5
 bar-volume-gradient = false
 
 bar-volume-indicator = 雷
@@ -840,6 +840,25 @@ ramp-9 = 
 ramp-font = 2
 ramp-foreground = ${color.YELLOW}
 ;;ramp-foreground = #55
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/title]
+type = internal/xwindow
+
+; Available tags:
+;   <label> (default)
+format = <label>
+;format-prefix = 
+
+; Available tokens:
+;   %title%
+; Default: %title%
+label = " %title%"
+label-maxlen = 10
+
+; Used instead of label when there is no window title
+;;label-empty = Arch Linux
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
