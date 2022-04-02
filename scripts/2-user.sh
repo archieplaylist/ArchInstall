@@ -117,7 +117,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
                                                         nordic-darker-theme \
                                                         papirus-icon-theme
     cd ~
-    git clone https://github.com/mariotani25/dotfiles-i3
+    git clone https://github.com/mariotani25/dotfiles-i3 -b minimal
     cd dotfiles-i3
     ./install-arch.sh
     sudo cp -rvf ~/ArchInstall/configs/i3-config/environment /etc/environment
