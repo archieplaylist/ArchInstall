@@ -28,7 +28,6 @@ bluez-utils
 bridge-utils
 btrfs-progs
 cronie
-cups
 dialog
 dmidecode
 dnsmasq
@@ -84,9 +83,7 @@ snap-pac
 snapper
 terminus-font
 traceroute
-ttf-droid
 ttf-hack
-ttf-roboto
 ufw
 unrar
 unzip

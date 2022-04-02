@@ -115,7 +115,10 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
                                                         ksuperkey \
                                                         betterlockscreen \
                                                         nordic-darker-theme \
-                                                        papirus-icon-theme
+                                                        papirus-icon-theme \
+                                                        ttf-unifont \
+                                                        siji-ttf \
+                                                        xorg-fonts-misc
     cd ~
     git clone https://github.com/mariotani25/dotfiles-i3 -b minimal
     cd dotfiles-i3
