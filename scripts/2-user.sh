@@ -121,7 +121,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
                                                         siji-ttf \
                                                         xorg-fonts-misc
     cd ~
-    git clone https://github.com/mariotani25/dotfiles-i3 -b minimal
+    git clone https://github.com/mariotani25/dotfiles-i3
     cd dotfiles-i3
     ./install-arch.sh
     sudo cp -rvf ~/ArchInstall/configs/i3-config/environment /etc/environment
