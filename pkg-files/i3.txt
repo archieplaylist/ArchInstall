@@ -11,7 +11,6 @@ network-manager-applet
 nm-connection-editor
 parcellite
 pavucontrol
-picom
 polkit-gnome
 power-profiles-daemon
 rofi

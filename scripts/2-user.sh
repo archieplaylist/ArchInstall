@@ -115,7 +115,15 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
                                                        betterlockscreen \
                                                        ttf-unifont \
                                                        siji-ttf \
-                                                       xorg-fonts-misc
+                                                       xorg-fonts-misc \
+                                                       hsetroot \
+                                                       geany \
+                                                       mpc \
+                                                       maim \
+                                                       xclip \
+                                                       viewnior \
+                                                       picom-ibhagwan-git \
+                                                       xfce-polkit
     cd ~
     git clone https://github.com/mariotani25/dotfiles-i3
     cd dotfiles-i3
