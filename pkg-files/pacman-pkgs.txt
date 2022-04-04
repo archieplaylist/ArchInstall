@@ -9,7 +9,7 @@ xterm
 binutils
 dosfstools
 linux-headers
-noto-fonts-emoji
+awesome-terminal-fonts
 usbutils
 xdg-user-dirs
 --END OF MINIMAL INSTALL--
@@ -25,13 +25,11 @@ bison
 bluez
 bluez-libs
 bluez-utils
-bridge-utils
 btrfs-progs
 cronie
 dialog
 dmidecode
 dnsmasq
-dtc
 efibootmgr
 egl-wayland
 exfat-utils
@@ -64,13 +62,11 @@ mpv
 neofetch
 ntfs-3g
 ntp
-openbsd-netcat
 openssh
 os-prober
 p7zip
 patch
 pkgconf
-powerline-fonts
 pipewire
 pipewire-alsa
 pipewire-jack
@@ -81,9 +77,7 @@ python-pyqt5
 python-pip
 snap-pac
 snapper
-terminus-font
 traceroute
-ttf-hack
 ufw
 unrar
 unzip
