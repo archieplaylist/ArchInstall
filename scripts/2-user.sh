@@ -110,8 +110,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     # cp -rf $HOME/ArchInstall/configs/xfce-config/xfce/.* $HOME
   
   elif [[ $DESKTOP_ENV == "i3" ]]; then
-    $AUR_HELPER -Syy
-    $AUR_HELPER -Sy --noconfirm --needed --color=always polybar \
+    $AUR_HELPER -S --noconfirm --needed --color=always polybar \
                                                         ksuperkey \
                                                         betterlockscreen \
                                                         nordic-darker-theme \
