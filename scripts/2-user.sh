@@ -111,14 +111,14 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
   
   elif [[ $DESKTOP_ENV == "i3" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always polybar \
-                                                        ksuperkey \
-                                                        betterlockscreen \
-                                                        nordic-darker-theme \
-                                                        nerd-fonts-jetbrains-moono \
-                                                        papirus-icon-theme \
-                                                        ttf-unifont \
-                                                        siji-ttf \
-                                                        xorg-fonts-misc
+                                                       ksuperkey \
+                                                       betterlockscreen \
+                                                       nordic-darker-theme \
+                                                       nerd-fonts-jetbrains-moono \
+                                                       papirus-icon-theme \
+                                                       ttf-unifont \
+                                                       siji-ttf \
+                                                       xorg-fonts-misc
     cd ~
     git clone https://github.com/mariotani25/dotfiles-i3
     cd dotfiles-i3
