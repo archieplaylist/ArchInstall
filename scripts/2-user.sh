@@ -113,9 +113,6 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always polybar \
                                                        ksuperkey \
                                                        betterlockscreen \
-                                                       nordic-darker-theme \
-                                                       nerd-fonts-jetbrains-moono \
-                                                       papirus-icon-theme \
                                                        ttf-unifont \
                                                        siji-ttf \
                                                        xorg-fonts-misc
