@@ -18,6 +18,7 @@ thunar
 thunar-archive-plugin
 thunar-volman
 thunar-media-tags-plugin
+ttf-iosevka-nerd
 xfce4-power-manager
 xsettingsd
 xorg-xsetroot
