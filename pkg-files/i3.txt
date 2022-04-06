@@ -1,0 +1,24 @@
+alacritty
+dunst
+engrampa
+gpicview
+i3-gaps
+i3status
+lxappearance-gtk3
+mpd
+network-manager-applet
+nm-connection-editor
+parcellite
+pavucontrol
+power-profiles-daemon
+python-gobject
+rofi
+thunar
+thunar-archive-plugin
+thunar-volman
+thunar-media-tags-plugin
+ttf-iosevka-nerd
+xfce4-power-manager
+xsettingsd
+xorg-xsetroot
+--END OF MINIMAL INSTALL--

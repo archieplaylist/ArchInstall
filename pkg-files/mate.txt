@@ -1,3 +1,5 @@
 mate
 mate-extra
+network-manager-applet
 --END OF MINIMAL INSTALL--
+papirus-icon-theme

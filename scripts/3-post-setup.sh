@@ -74,7 +74,9 @@ elif [[ "${DESKTOP_ENV}" == "openbox" ]]; then
 
 else
   if [[ ! "${DESKTOP_ENV}" == "server"  ]]; then
-  sudo pacman -S --noconfirm --needed --color=always lightdm lightdm-gtk-greeter
+  sudo pacman -S --noconfirm --needed --color=always lightdm lightdm-slick-greeter
+  sed -i 's/#greeter-session=example.*/greeter-session=lightdm-slick-greeter/g' /etc/lightdm/lightdm.conf
+
   systemctl enable lightdm.service
   fi
 fi
@@ -99,6 +101,8 @@ systemctl enable bluetooth
 echo "  Bluetooth enabled"
 systemctl enable fstrim.timer
 echo "  Periodic Trim enabled"
+systemctl enable avahi-daemon.service
+echo "  Avahi enabled"
 
 if [[ "${FS}" == "luks" || "${FS}" == "btrfs" ]]; then
 echo -ne "

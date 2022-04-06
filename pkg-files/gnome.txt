@@ -1,3 +1,6 @@
 gnome
+gdm
+gnome-software-packagekit-plugin
 --END OF MINIMAL INSTALL--
-gnome-extras
+gnome-tweaks
+papirus-icon-theme

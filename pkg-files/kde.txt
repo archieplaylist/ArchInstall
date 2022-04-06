@@ -16,6 +16,7 @@ kde-gtk-config
 kcodecs
 kcoreaddons
 kdeplasma-addons
+kdialog
 kgamma5
 kgpg
 kinfocenter
@@ -29,11 +30,14 @@ layer-shell-qt
 milou
 okular
 packagekit-qt5
+papirus-icon-theme
 plasma-nm
 plasma-pa
 plasma-wayland-session
 powerdevil
 print-manager
+sddm
+sddm-kcm
 spectacle
 systemsettings
 xdg-desktop-portal-kde

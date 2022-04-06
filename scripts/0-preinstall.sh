@@ -23,7 +23,7 @@ echo -ne "
 -------------------------------------------------------------------------
 "
 # reflector -a 48 -c $iso -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
-reflector -f 20 -l 30 --number 10 --save /etc/pacman.d/mirrorlist
+reflector -f 20 -l 20 --number 10 --save /etc/pacman.d/mirrorlist
 mkdir /mnt &>/dev/null # Hiding error message if any
 echo -ne "
 -------------------------------------------------------------------------

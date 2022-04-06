@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -e
+pacman -Sy git --noconfirm
+git clone https://github.com/mariotani25/ArchInstall
+sleep 1
+cd ArchInstall
+sleep 1
+./archinstall.sh
+sleep 5
+reboot
