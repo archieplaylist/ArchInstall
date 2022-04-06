@@ -78,6 +78,7 @@ python-pip
 snap-pac
 snapper
 traceroute
+thefuck
 ufw
 unrar
 unzip
