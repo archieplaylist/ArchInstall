@@ -4,15 +4,14 @@ engrampa
 gpicview
 i3-gaps
 i3status
-kitty
 lxappearance-gtk3
 mpd
 network-manager-applet
 nm-connection-editor
 parcellite
 pavucontrol
-polkit-gnome
 power-profiles-daemon
+python-gobject
 rofi
 thunar
 thunar-archive-plugin
