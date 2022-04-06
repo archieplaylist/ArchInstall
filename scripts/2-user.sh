@@ -15,7 +15,8 @@ source $HOME/ArchInstall/configs/setup.conf
   git clone "https://github.com/mariotani25/zsh"
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
   ln -s "$HOME/zsh/.zshrc" ~/.zshrc
-  # chsh -s /usr/bin/zsh $USERNAME
+  cp -rvf ~/ArchInstall/configs/.p10k.zsh ~/
+  sudo chsh -s /usr/bin/zsh $USERNAME
 
 sed -n '/'$INSTALL_TYPE'/q;p' ~/ArchInstall/pkg-files/${DESKTOP_ENV}.txt | while read line
 do
@@ -58,9 +59,9 @@ fi
 # Theming DE if user chose FULL installation
 if [[ $INSTALL_TYPE == "FULL" ]]; then
   mkdir -p ~/.config
-  cp -rvf ~/ArchInstall/configs/.config ~/.config/
-  sudo chsh -s /usr/bin/zsh $USERNAME
-  cp -rvf ~/ArchInstall/configs/.p10k.zsh ~/
+  cp -rvf ~/ArchInstall/configs/.config ~/
+  # sudo chsh -s /usr/bin/zsh $USERNAME
+  # cp -rvf ~/ArchInstall/configs/.p10k.zsh ~/
 
   if [[ $DESKTOP_ENV == "gnome" ]]; then
   ### AUR INSTALL
