@@ -12,7 +12,7 @@ source $HOME/ArchInstall/configs/setup.conf
   cd ~
   mkdir "$HOME/.cache"
   touch "$HOME/.cache/zshhistory"
-  git clone "https://github.com/ChrisTitusTech/zsh"
+  git clone "https://github.com/mariotani25/zsh"
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
   ln -s "$HOME/zsh/.zshrc" ~/.zshrc
   # chsh -s /usr/bin/zsh $USERNAME
