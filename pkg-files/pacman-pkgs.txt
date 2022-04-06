@@ -84,6 +84,7 @@ unzip
 which
 wireplumber
 xed
+yt-dlp
 zip
 zsh
 zsh-syntax-highlighting
