@@ -127,11 +127,13 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
                                                        xfce-polkit
     cd ~
     git clone https://github.com/mariotani25/dots
-    cp -rvf ~/dots/* ~/.config
+    cp -rvf ~/dots/.config ~/
+    cp -rvf ~/dots/.fonts ~/
+    sudo cp -rvf ~/dots/wallpapers /usr/share/
     sleep 1
-    git clone https://github.com/mariotani25/fonts
-    mkdir .fonts
-    cp -rvf ~/fonts/custom ~/.fonts
+    # git clone https://github.com/mariotani25/fonts
+    # mkdir .fonts
+    # cp -rvf ~/fonts/custom ~/.fonts
     sudo cp -rvf ~/ArchInstall/configs/i3-config/environment /etc/environment
     
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
