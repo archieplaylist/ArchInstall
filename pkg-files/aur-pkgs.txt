@@ -8,4 +8,4 @@ ocs-url
 papirus-icon-theme
 plymouth-git
 ttf-meslo
-volantes-cursor
+volantes-cursors

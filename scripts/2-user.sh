@@ -130,6 +130,7 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     cp -rvf ~/dots/.config ~/
     cp -rvf ~/dots/.fonts ~/
     sudo cp -rvf ~/dots/wallpapers /usr/share/
+    sudo cp -rvf ~/dots/slick-greeter.conf /etc/lightdm/
     sleep 1
     # git clone https://github.com/mariotani25/fonts
     # mkdir .fonts
