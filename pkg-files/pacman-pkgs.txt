@@ -48,6 +48,8 @@ gst-libav
 gst-plugins-good
 gst-plugins-ugly
 gst-plugin-pipewire
+gvfs
+gvfs-mtp
 haveged
 htop
 libdvdcss
