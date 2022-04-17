@@ -114,15 +114,14 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     $AUR_HELPER -S --noconfirm --needed --color=always polybar \
                                                        ksuperkey \
                                                        betterlockscreen \
+                                                       autotiling \
                                                        ttf-unifont \
                                                        siji-ttf \
                                                        xorg-fonts-misc \
                                                        hsetroot \
-                                                       geany \
                                                        mpc \
                                                        maim \
                                                        xclip \
-                                                       viewnior \
                                                        picom-ibhagwan-git \
                                                        xfce-polkit
     cd ~
