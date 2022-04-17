@@ -1,4 +1,5 @@
 alacritty
+arandr
 dunst
 engrampa
 gpicview
