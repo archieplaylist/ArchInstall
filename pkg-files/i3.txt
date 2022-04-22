@@ -2,11 +2,11 @@ alacritty
 arandr
 dunst
 engrampa
+fortune-mod
 gpicview
 i3-gaps
-i3status
 lxappearance-gtk3
-mpd
+maim
 network-manager-applet
 nitrogen
 nm-connection-editor

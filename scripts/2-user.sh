@@ -115,13 +115,6 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
                                                        ksuperkey \
                                                        betterlockscreen \
                                                        autotiling \
-                                                       ttf-unifont \
-                                                       siji-ttf \
-                                                       xorg-fonts-misc \
-                                                       hsetroot \
-                                                       mpc \
-                                                       maim \
-                                                       xclip \
                                                        picom-ibhagwan-git \
                                                        xfce-polkit
     cd ~

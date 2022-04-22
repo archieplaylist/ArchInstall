@@ -79,7 +79,6 @@ python-pyqt5
 python-pip
 snap-pac
 snapper
-traceroute
 thefuck
 ufw
 unrar
